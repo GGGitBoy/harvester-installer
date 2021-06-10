@@ -18,7 +18,7 @@ CERT_MANAGER_VERSION=v1.2.0
 mkdir -p k3os/images/70-iso/charts
 harvester_path=../harvester
 if [ ! -d ${harvester_path} ];then
-    git clone --branch master --single-branch --depth 1 https://github.com/harvester/harvester.git /tmp/harvester
+    git clone --branch demo --single-branch --depth 1 https://github.com/GGGitBoy/harvester.git /tmp/harvester
     harvester_path=/tmp/harvester
 fi
 harvester_chart_path=${harvester_path}/deploy/charts/harvester
