@@ -49,10 +49,14 @@ sed -i 's/$CERT_MANAGER_CHART/'$CERT_MANAGER_CHART'/' manifests/cert-manager.yam
 
 # Prepare the monitoring chart
 helm pull https://charts.rancher.io/assets/rancher-monitoring/rancher-monitoring-${MONITORING_VERSION}.tgz -d k3os/images/70-iso/charts
-helm pull https://charts.rancher.io/assets/rancher-monitoring/rancher-monitoring-crd-${MONITORING_VERSION}.tgz -d k3os/images/70-iso/charts
 
 # chart sanity check
 tar zxvf k3os/images/70-iso/charts/rancher-monitoring-*.tgz >/dev/null
+
+# Prepare the monitoring-crd chart
+helm pull https://charts.rancher.io/assets/rancher-monitoring/rancher-monitoring-crd-${MONITORING_VERSION}.tgz -d k3os/images/70-iso/charts
+
+# chart sanity check
 tar zxvf k3os/images/70-iso/charts/rancher-monitoring-crd-*.tgz >/dev/null
 
 # Prepare monitoring manifests
