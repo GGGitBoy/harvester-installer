@@ -62,8 +62,8 @@ tar zxvf k3os/images/70-iso/charts/rancher-monitoring-crd-*.tgz >/dev/null
 # Prepare monitoring manifests
 MONITORING_CHART=$(ls k3os/images/70-iso/charts/rancher-monitoring* | xargs basename)
 MONITORING_CRD_CHART=$(ls k3os/images/70-iso/charts/rancher-monitoring-crd* | xargs basename)
-sed -i 's/$MONITORING_CRD_CHART/'$MONITORING_CRD_CHART'/' manifests/monitoring.yaml
-sed -i 's/$MONITORING_CHART/'$MONITORING_CHART'/' manifests/monitoring.yaml
+sed -i 's/$MONITORING_CRD_CHART/'$MONITORING_CRD_CHART'/' manifests/graph-monitoring.yaml
+sed -i 's/$MONITORING_CHART/'$MONITORING_CHART'/' manifests/graph-monitoring.yaml
 
 # Copy manifests
 cp -r manifests k3os/images/70-iso/
